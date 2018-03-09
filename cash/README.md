@@ -1,3 +1,5 @@
+# cash
+
 ## Introduction
 
 This library converts a given currency into another given currency or currencies.
