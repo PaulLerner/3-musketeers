@@ -7,6 +7,14 @@ const currencies = require('../lib/currencies.json');
 
 const API = 'https://api.fixer.io/latest';
 
+/**
+ * Converts the given amount
+ * @param {double} amount - The amount to convert
+ * @param {list} to - List of the currencies weconvert to
+ * @param {string} from - The currency we convert from
+ * @param {object} response - Response from the API : exchange rates of the currencies
+ * @param {object} loading - Ora object used to display informations to the user
+ */
 const convert = configuration => {
   const {amount, to, from, response, loading} = configuration;
 
@@ -33,6 +41,11 @@ const convert = configuration => {
   );
   process.exit(1);
 };
+
+/**
+ * Main function : treats the input command and calls loading, the fixer API and convert
+ * @param {object} command - The command entered by the user
+ */
 
 const cash = async command => {
   const amount = command.amount;
